@@ -7,3 +7,14 @@ body {
   "Helvetica Neue", sans-serif;
   max-width: 1200px;
 }
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+.spinner{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}

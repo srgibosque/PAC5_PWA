@@ -9,16 +9,22 @@ import { Card } from '../../models/card.interface';
 })
 export class CardsListComponent implements OnInit {
   cards: Card[] = [];
+  isLoading: boolean = false;
 
    constructor(private cardService: CardsServiceService){}
 
    ngOnInit(): void {
+      this.isLoading = true;
       this.cardService.getCards(48)
       .subscribe((cards) => {
+        this.isLoading = false;
         if(cards){
           this.cards = cards.cards;
           console.log(this.cards);
         }
+      }, (err) => {
+        this.isLoading = false; 
+        console.error(err);
       });
    }
 }

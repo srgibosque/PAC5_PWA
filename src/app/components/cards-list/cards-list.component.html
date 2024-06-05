@@ -1,14 +1,21 @@
 <h1>MTG Cards</h1>
 
-<div class="card-container">
-
-  <a [routerLink]="['/card', card.id]" *ngFor="let card of cards">
-    <mat-card class="card">
-      <mat-card-content>
-        <img src="{{card.imageUrl}}" alt="image">
-        <mat-card-title>{{card.name}}</mat-card-title>
-      </mat-card-content>
-    </mat-card>
-  </a>
-
+<div *ngIf="isLoading" class="spinner">
+  <mat-spinner></mat-spinner>
 </div>
+
+<div *ngIf="!isLoading">
+  <div class="card-container">
+  
+    <a [routerLink]="['/card', card.id]" *ngFor="let card of cards">
+      <mat-card class="card">
+        <mat-card-content>
+          <img src="{{card.imageUrl}}" alt="image">
+          <mat-card-title>{{card.name}}</mat-card-title>
+        </mat-card-content>
+      </mat-card>
+    </a>
+  
+  </div>
+</div>
+

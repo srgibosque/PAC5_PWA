@@ -10,6 +10,7 @@ import { Card } from '../../models/card.interface';
 })
 export class CardItemComponent implements OnInit {
   card!: Card;
+  isLoading: boolean = false;
 
   constructor(
     private cardService: CardsServiceService,
@@ -19,11 +20,13 @@ export class CardItemComponent implements OnInit {
   
   ngOnInit(): void {
     const id = this.activatedRoute.snapshot.paramMap.get('id');
-
+    this.isLoading = true;
+    
     if(id){
       this.cardService.getCardByID(id)
         .subscribe((card) => {
           this.card = card.card;
+          this.isLoading = false;
         });
     }
   }
