@@ -1,12 +1,14 @@
 <h1>MTG Cards</h1>
 
-<div class="container">
+<div class="card-container">
 
   <a [routerLink]="['/card', card.id]" *ngFor="let card of cards">
-    <div class="card">
-      <img src="{{card.imageUrl}}" alt="image">
-      <p>{{card.name}}</p>
-    </div>
+    <mat-card class="card">
+      <mat-card-content>
+        <img src="{{card.imageUrl}}" alt="image">
+        <mat-card-title>{{card.name}}</mat-card-title>
+      </mat-card-content>
+    </mat-card>
   </a>
-  
+
 </div>
