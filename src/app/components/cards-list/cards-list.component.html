@@ -1,1 +1,12 @@
-<p>cards-list works!</p>
+<h1>MTG Cards</h1>
+
+<div class="container">
+
+  <a [routerLink]="['/card', card.id]" *ngFor="let card of cards">
+    <div class="card">
+      <img src="{{card.imageUrl}}" alt="image">
+      <p>{{card.name}}</p>
+    </div>
+  </a>
+  
+</div>
