@@ -22,6 +22,12 @@
         <mat-card-content>
           <img src="{{card.imageUrl}}" alt="image">
           <mat-card-title>{{card.name}}</mat-card-title>
+          <mat-card-subtitle>{{card.originalType}}</mat-card-subtitle>
+          <mat-divider></mat-divider>
+          <div class="artist">
+            <mat-icon>brush</mat-icon>
+            <p>{{card.artist}}</p>
+          </div>
         </mat-card-content>
       </mat-card>
     </a>

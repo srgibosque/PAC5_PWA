@@ -14,6 +14,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
+import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { MatTableModule } from '@angular/material/table';
     MatButtonToggleModule,
     MatIconModule,
     MatTableModule,
+    MatDividerModule,
   ],
   providers: [
     provideAnimationsAsync()

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CardsServiceService } from '../../services/cards-service.service';
 import { Card } from '../../models/card.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cards-list',
@@ -13,7 +14,7 @@ export class CardsListComponent implements OnInit {
   cardView: boolean = true;
   columnsToDisplay = ['name', 'manaCost', 'set', 'type', 'artist']
 
-  constructor(private cardService: CardsServiceService){}
+  constructor(private cardService: CardsServiceService, private router: Router){}
 
   ngOnInit(): void {
     this.isLoading = true;
@@ -37,4 +38,5 @@ export class CardsListComponent implements OnInit {
   activateCardView(): void{
   this.cardView = true;
   }
+
 }

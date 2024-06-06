@@ -14,8 +14,35 @@ header{
   max-width: 300px;
 }
 
+.card:hover{
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
 img{
   width: 100%;
+}
+
+.artist{
+  display: flex;
+  align-items: center;
+}
+
+.artist p{
+  margin: 0;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.artist mat-icon{
+  color: rgba(0, 0, 0, 0.54);
+}
+
+mat-card-subtitle{
+  padding-bottom: 4px;
+}
+
+mat-divider{
+  padding: 4px 0;
 }
 
 @media (max-width: 1080px) {
