@@ -1,12 +1,22 @@
-<h1>MTG Cards</h1>
+<header>
+  <h1>MTG Cards</h1>
+  <mat-button-toggle-group name="viewMode" aria-label="viewMode">
+    <mat-button-toggle value="cardView" (click)="activateCardView()">
+      <mat-icon>view_module</mat-icon>
+    </mat-button-toggle>
+    <mat-button-toggle value="tableView" (click)="activateTableView()">
+      <mat-icon>view_list</mat-icon>
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+</header>
 
 <div *ngIf="isLoading" class="spinner">
   <mat-spinner></mat-spinner>
 </div>
 
 <div *ngIf="!isLoading">
-  <div class="card-container">
-  
+
+  <div class="card-container" *ngIf="cardView; else tableView">
     <a [routerLink]="['/card', card.id]" *ngFor="let card of cards">
       <mat-card class="card">
         <mat-card-content>
@@ -15,7 +25,39 @@
         </mat-card-content>
       </mat-card>
     </a>
-  
   </div>
+
+  <ng-template #tableView>
+    <table mat-table [dataSource]="cards">
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-cell *matCellDef="let card">{{card.name}}</td>
+      </ng-container>
+    
+      <ng-container matColumnDef="manaCost">
+        <th mat-header-cell *matHeaderCellDef>Mana cost</th>
+        <td mat-cell *matCellDef="let card">{{card.manaCost}}</td>
+      </ng-container>
+    
+      <ng-container matColumnDef="set">
+        <th mat-header-cell *matHeaderCellDef>Set</th>
+        <td mat-cell *matCellDef="let card">{{card.setName}}</td>
+      </ng-container>
+    
+      <ng-container matColumnDef="type">
+        <th mat-header-cell *matHeaderCellDef>Type</th>
+        <td mat-cell *matCellDef="let card">{{card.type}}</td>
+      </ng-container>
+    
+      <ng-container matColumnDef="artist">
+        <th mat-header-cell *matHeaderCellDef>Artist</th>
+        <td mat-cell *matCellDef="let card">{{card.artist}}</td>
+      </ng-container>
+    
+      <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+      <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+    </table>
+  </ng-template>
+
 </div>
 

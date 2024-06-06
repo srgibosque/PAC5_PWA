@@ -10,21 +10,31 @@ import { Card } from '../../models/card.interface';
 export class CardsListComponent implements OnInit {
   cards: Card[] = [];
   isLoading: boolean = false;
+  cardView: boolean = true;
+  columnsToDisplay = ['name', 'manaCost', 'set', 'type', 'artist']
 
-   constructor(private cardService: CardsServiceService){}
+  constructor(private cardService: CardsServiceService){}
 
-   ngOnInit(): void {
-      this.isLoading = true;
-      this.cardService.getCards(48)
-      .subscribe((cards) => {
-        this.isLoading = false;
-        if(cards){
-          this.cards = cards.cards;
-          console.log(this.cards);
-        }
-      }, (err) => {
-        this.isLoading = false; 
-        console.error(err);
-      });
-   }
+  ngOnInit(): void {
+    this.isLoading = true;
+    this.cardService.getCards(48)
+    .subscribe((cards) => {
+      this.isLoading = false;
+      if(cards){
+        this.cards = cards.cards;
+        console.log(this.cards);
+      }
+    }, (err) => {
+      this.isLoading = false; 
+      console.error(err);
+    });
+  }
+
+  activateTableView(): void{
+  this.cardView = false;
+  }
+
+  activateCardView(): void{
+  this.cardView = true;
+  }
 }
