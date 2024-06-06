@@ -14,7 +14,9 @@ export interface Card {
   "subtypes": string[];
   "rarity": string;
   "set": string;
+  "setName": string;
   "text": string;
+  "flavor": string;
   "artist": string;
   "number": string;
   "powers": string;

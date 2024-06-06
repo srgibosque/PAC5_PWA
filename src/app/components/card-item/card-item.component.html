@@ -1,9 +1,21 @@
+<a [routerLink]="['/']">
+  <mat-icon>arrow_back</mat-icon>
+</a>
+
 <div *ngIf="isLoading" class="spinner">
   <mat-spinner></mat-spinner>
 </div>
 
 <div *ngIf="!isLoading">
-  <div *ngIf="card">
-    <p>{{card.name}}</p>
-  </div>
+  <mat-card *ngIf="card" class="card">
+    <img src="{{card.imageUrl}}" alt="{{card.name}}">
+    <div class="card-content">
+      <h2>{{card.name}}</h2>
+      <p>{{card.originalType}}</p>
+      <p>{{card.originalText}}</p>
+      <p class="flavor">{{card.flavor}}</p>
+      <p>{{card.setName}}</p>
+    </div>
+
+  </mat-card>
 </div>
