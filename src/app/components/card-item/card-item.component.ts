@@ -11,6 +11,7 @@ import { Card } from '../../models/card.interface';
 export class CardItemComponent implements OnInit {
   card!: Card;
   isLoading: boolean = false;
+  showMore: boolean = false;
 
   constructor(
     private cardService: CardsServiceService,
@@ -29,5 +30,9 @@ export class CardItemComponent implements OnInit {
           this.isLoading = false;
         });
     }
+  }
+
+  activateShowMore(){
+    this.showMore = true;
   }
 }

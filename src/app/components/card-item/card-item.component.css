@@ -5,9 +5,15 @@ h1, h2, h3, p{
 
 .card{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 16px;
   padding: 16px;
+}
+
+.card-image-content{
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
 }
 
 .card-content .flavor{

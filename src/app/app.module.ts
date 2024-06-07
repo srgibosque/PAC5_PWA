@@ -15,6 +15,8 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { MatDividerModule } from '@angular/material/divider';
     MatIconModule,
     MatTableModule,
     MatDividerModule,
+    MatTabsModule,
+    MatButtonModule,
   ],
   providers: [
     provideAnimationsAsync()

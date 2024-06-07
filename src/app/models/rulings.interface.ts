@@ -1,4 +1,4 @@
-export interface Rule {
+export interface Ruling {
   "date": string;
   "text": string;
-} 
+}

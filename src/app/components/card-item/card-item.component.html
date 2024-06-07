@@ -8,14 +8,40 @@
 
 <div *ngIf="!isLoading">
   <mat-card *ngIf="card" class="card">
-    <img src="{{card.imageUrl}}" alt="{{card.name}}">
-    <div class="card-content">
-      <h2>{{card.name}}</h2>
-      <p>{{card.originalType}}</p>
-      <p>{{card.originalText}}</p>
-      <p class="flavor">{{card.flavor}}</p>
-      <p>{{card.setName}}</p>
+    <div class="card-image-content">
+      <img src="{{card.imageUrl}}" alt="{{card.name}}">
+      <div class="card-content">
+        <h2>{{card.name}}</h2>
+        <p>{{card.originalType}}</p>
+        <p>{{card.originalText}}</p>
+        <p class="flavor">{{card.flavor}}</p>
+        <p>{{card.setName}}</p>
+      </div>
     </div>
+    <mat-card-actions>
+      <button (click)="activateShowMore()" mat-raised-button>Show More</button>
+    </mat-card-actions>
 
+    <mat-tab-group *ngIf="showMore">
+      <mat-tab label="Legalities">
+        <div *ngFor="let legality of card.legalities" class="legalities">
+          <p>{{legality.format}}</p>
+          <p>{{legality.legality}}</p>
+        </div>
+      </mat-tab>
+      <mat-tab label="Rulings" *ngIf="card.rulings">
+        <div *ngFor="let ruling of card.rulings" class="rulings">
+          <p>{{ruling.date}}</p>
+          <p>{{ruling.text}}</p>
+        </div>
+      </mat-tab>
+      <mat-tab label="Names">
+        <div *ngFor="let name of card.foreignNames" class="names">
+          <p>{{name.language}}</p>
+          <p>{{name.name}}</p>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
   </mat-card>
+
 </div>
