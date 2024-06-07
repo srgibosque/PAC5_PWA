@@ -2,11 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { CardsServiceService } from '../../services/cards-service.service';
 import { Card } from '../../models/card.interface';
 import { Router } from '@angular/router';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-cards-list',
   templateUrl: './cards-list.component.html',
-  styleUrl: './cards-list.component.css'
+  styleUrl: './cards-list.component.css',
+  animations:[
+    trigger('fadeInOut', [
+      state('void', style({opacity: 0.2})),
+      transition('void <=> *', animate(1000)),
+    ])
+  ],
 })
 export class CardsListComponent implements OnInit {
   cards: Card[] = [];

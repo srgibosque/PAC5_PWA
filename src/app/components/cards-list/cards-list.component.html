@@ -14,7 +14,7 @@
   <mat-spinner></mat-spinner>
 </div>
 
-<div *ngIf="!isLoading">
+<div *ngIf="!isLoading" [@fadeInOut]>
 
   <div class="card-container" *ngIf="cardView; else tableView">
     <a [routerLink]="['/card', card.id]" *ngFor="let card of cards">
