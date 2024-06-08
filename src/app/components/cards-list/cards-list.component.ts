@@ -22,6 +22,14 @@ export class CardsListComponent implements OnInit {
   isLoading: boolean = false;
   cardView: boolean = true;
 
+  columnsDefinition = [
+    { header: 'Name', property: 'name' },
+    { header: 'Mana Cost', property: 'manaCost' },
+    { header: 'Set', property: 'set' },
+    { header: 'Type', property: 'type' },
+    { header: 'Artist', property: 'artist' }
+  ];
+
   constructor(
     private cardService: CardsServiceService, 
     private viewModeService: ViewModeService,
