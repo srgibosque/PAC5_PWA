@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { CardsServiceService } from '../../services/cards-service.service';
-import { Card } from '../../models/card.interface';
-import { Router } from '@angular/router';
 import { animate, state, style, transition, trigger } from '@angular/animations';
+
+import { Card } from '../../models/card.interface';
+
+import { CardsServiceService } from '../../services/cards-service.service';
+import { ViewModeService } from '../../Shared/services/view-mode.service';
 
 @Component({
   selector: 'app-cards-list',
@@ -20,7 +22,10 @@ export class CardsListComponent implements OnInit {
   isLoading: boolean = false;
   cardView: boolean = true;
 
-  constructor(private cardService: CardsServiceService, private router: Router){}
+  constructor(
+    private cardService: CardsServiceService, 
+    private viewModeService: ViewModeService,
+  ){}
 
   ngOnInit(): void {
     this.isLoading = true;
@@ -34,14 +39,10 @@ export class CardsListComponent implements OnInit {
       this.isLoading = false; 
       console.error(err);
     });
-  }
 
-  activateTableView(): void{
-  this.cardView = false;
-  }
-
-  activateCardView(): void{
-  this.cardView = true;
+    this.viewModeService.viewMode$.subscribe((isCardView) => {
+      this.cardView = isCardView;
+    })
   }
 
 }

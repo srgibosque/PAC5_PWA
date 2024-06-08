@@ -19,6 +19,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatButtonModule } from '@angular/material/button';
 import { CardComponent } from './Shared/components/card/card.component';
 import { TableComponent } from './Shared/components/table/table.component';
+import { HeaderComponent } from './Shared/components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { TableComponent } from './Shared/components/table/table.component';
     CardsListComponent,
     CardItemComponent,
     CardComponent,
-    TableComponent
+    TableComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
