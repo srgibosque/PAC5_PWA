@@ -25,11 +25,11 @@ export class CardsListComponent implements OnInit {
 
   ngOnInit(): void {
     this.isLoading = true;
-    this.cardService.getCards(48)
+    this.cardService.getCards(64)
     .subscribe((cards) => {
       this.isLoading = false;
       if(cards){
-        this.cards = cards.cards;
+        this.cards = cards.cards.filter(card => card.imageUrl);
         console.log(this.cards);
       }
     }, (err) => {
