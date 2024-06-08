@@ -30,7 +30,6 @@ export class CardsListComponent implements OnInit {
       this.isLoading = false;
       if(cards){
         this.cards = cards.cards.filter(card => card.imageUrl);
-        console.log(this.cards);
       }
     }, (err) => {
       this.isLoading = false; 

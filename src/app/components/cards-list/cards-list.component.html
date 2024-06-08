@@ -16,21 +16,10 @@
 
 <div *ngIf="!isLoading" [@fadeInOut]>
 
-  <div class="card-container" *ngIf="cardView; else tableView">
-    <a [routerLink]="['/card', card.id]" *ngFor="let card of cards">
-      <mat-card class="card">
-        <mat-card-content>
-          <img src="{{card.imageUrl}}" alt="image">
-          <mat-card-title>{{card.name}}</mat-card-title>
-          <mat-card-subtitle>{{card.originalType}}</mat-card-subtitle>
-          <mat-divider></mat-divider>
-          <div class="artist">
-            <mat-icon>brush</mat-icon>
-            <p>{{card.artist}}</p>
-          </div>
-        </mat-card-content>
-      </mat-card>
-    </a>
+  <div *ngIf="cardView; else tableView" class="card-container">
+    <div *ngFor="let card of cards">
+      <app-card [card]="card"></app-card>
+    </div>
   </div>
 
   <ng-template #tableView>

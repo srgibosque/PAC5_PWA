@@ -10,7 +10,7 @@ header{
   gap: 8px;
 }
 
-.card {
+/* .card {
   max-width: 300px;
 }
 
@@ -43,7 +43,7 @@ mat-card-subtitle{
 
 mat-divider{
   padding: 4px 0;
-}
+} */
 
 @media (max-width: 1080px) {
   .card-container  {
