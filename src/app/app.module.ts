@@ -20,6 +20,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { CardComponent } from './Shared/components/card/card.component';
 import { TableComponent } from './Shared/components/table/table.component';
 import { HeaderComponent } from './Shared/components/header/header.component';
+import { GridComponent } from './Shared/components/grid/grid.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { HeaderComponent } from './Shared/components/header/header.component';
     CardItemComponent,
     CardComponent,
     TableComponent,
-    HeaderComponent
+    HeaderComponent,
+    GridComponent
   ],
   imports: [
     BrowserModule,

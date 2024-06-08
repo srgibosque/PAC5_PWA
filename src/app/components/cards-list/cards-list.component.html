@@ -5,10 +5,10 @@
 </div>
 
 <div *ngIf="!isLoading" [@fadeInOut]>
-  <div *ngIf="cardView; else tableView" class="card-container">
-    <div *ngFor="let card of cards">
-      <app-card [card]="card"></app-card>
-    </div>
+  <div *ngIf="cardView; else tableView">
+    <app-grid>
+      <app-card [card]="card" *ngFor="let card of cards"></app-card>
+    </app-grid>
   </div>
 
   <ng-template #tableView>
