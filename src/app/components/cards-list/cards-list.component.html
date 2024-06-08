@@ -15,7 +15,6 @@
 </div>
 
 <div *ngIf="!isLoading" [@fadeInOut]>
-
   <div *ngIf="cardView; else tableView" class="card-container">
     <div *ngFor="let card of cards">
       <app-card [card]="card"></app-card>
@@ -23,36 +22,7 @@
   </div>
 
   <ng-template #tableView>
-    <table mat-table [dataSource]="cards">
-      <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef>Name</th>
-        <td mat-cell *matCellDef="let card">{{card.name}}</td>
-      </ng-container>
-    
-      <ng-container matColumnDef="manaCost">
-        <th mat-header-cell *matHeaderCellDef>Mana cost</th>
-        <td mat-cell *matCellDef="let card">{{card.manaCost}}</td>
-      </ng-container>
-    
-      <ng-container matColumnDef="set">
-        <th mat-header-cell *matHeaderCellDef>Set</th>
-        <td mat-cell *matCellDef="let card">{{card.setName}}</td>
-      </ng-container>
-    
-      <ng-container matColumnDef="type">
-        <th mat-header-cell *matHeaderCellDef>Type</th>
-        <td mat-cell *matCellDef="let card">{{card.type}}</td>
-      </ng-container>
-    
-      <ng-container matColumnDef="artist">
-        <th mat-header-cell *matHeaderCellDef>Artist</th>
-        <td mat-cell *matCellDef="let card">{{card.artist}}</td>
-      </ng-container>
-    
-      <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
-      <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
-    </table>
+    <app-table [cards]="cards"></app-table>
   </ng-template>
-
 </div>
 

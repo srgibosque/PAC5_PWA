@@ -18,13 +18,15 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatButtonModule } from '@angular/material/button';
 import { CardComponent } from './Shared/components/card/card.component';
+import { TableComponent } from './Shared/components/table/table.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardsListComponent,
     CardItemComponent,
-    CardComponent
+    CardComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,

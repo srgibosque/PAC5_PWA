@@ -19,7 +19,6 @@ export class CardsListComponent implements OnInit {
   cards: Card[] = [];
   isLoading: boolean = false;
   cardView: boolean = true;
-  columnsToDisplay = ['name', 'manaCost', 'set', 'type', 'artist']
 
   constructor(private cardService: CardsServiceService, private router: Router){}
 
