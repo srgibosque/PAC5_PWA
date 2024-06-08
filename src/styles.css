@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { 
+  margin: auto; 
+  font-family: Roboto, 
+  "Helvetica Neue", sans-serif;
+  max-width: 1200px;
+  padding: 24px;
+}
+
+h1, h2, h3, p{
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+.spinner{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}

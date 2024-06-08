@@ -1,0 +1,53 @@
+<a [routerLink]="['/']">
+  <mat-icon>arrow_back</mat-icon>
+</a>
+
+<div *ngIf="isLoading" class="spinner">
+  <mat-spinner></mat-spinner>
+</div>
+
+<div *ngIf="!isLoading">
+  <mat-card *ngIf="card" class="card">
+    <div class="card-image-content">
+      <img src="{{card.imageUrl}}" alt="{{card.name}}">
+      <div class="card-content">
+        <h2>{{card.name}}</h2>
+        <p class="subtitle">{{card.originalType}}</p>
+        <p>{{card.originalText}}</p>
+        <p class="flavor">{{card.flavor}}</p>
+        <p class="set">Set: {{card.setName}}</p>
+      </div>
+    </div>
+    <mat-card-actions>
+      <button (click)="activateShowMore()" mat-raised-button>Show More</button>
+    </mat-card-actions>
+
+    <mat-tab-group *ngIf="showMore">
+      <mat-tab label="Legalities">
+        <div class="legalities-container">
+          <div *ngFor="let legality of card.legalities" class="legalities">
+            <p class="legality">{{legality.legality}}</p>
+            <p>{{legality.format}}</p>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="Rulings" *ngIf="card.rulings">
+        <div class="rulings-container">
+          <div *ngFor="let ruling of card.rulings" class="rulings">
+            <p>{{ruling.text}}</p>
+            <p class="ruling-date">{{ruling.date}}</p>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="Names">
+        <div class="names-container">
+          <div *ngFor="let name of card.foreignNames" class="names">
+            <p class="language">{{name.language}}:</p>
+            <p>{{name.name}}</p>
+          </div>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card>
+
+</div>

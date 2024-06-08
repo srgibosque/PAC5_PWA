@@ -1,0 +1,92 @@
+h1, h2, h3, p{
+  margin: 0;
+  padding: 0;
+}
+
+img{
+  max-width: 380px;
+}
+
+a mat-icon{
+  padding: 16px;
+}
+
+a mat-icon:hover{
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 32px;
+}
+
+.card{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+}
+
+.card-image-content{
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.card-content h2{
+  font-size: 24px;
+}
+
+.card-content .subtitle{
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.54);
+  margin-bottom: 16px;
+}
+
+.card-content .flavor{
+  font-style: italic;
+  margin-bottom: 16px;
+}
+
+/* mat-tab{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+} */
+
+.legalities-container{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.legalities, .names{
+  display: flex;
+  gap: 16px;
+  margin: 16px;
+  align-items: center;
+}
+
+.legalities .legality{
+  padding: 8px;
+  background-color: rgb(14, 223, 14);
+  border-radius: 4px;
+}
+
+.names .language {
+  font-weight: bold;
+}
+
+.rulings{
+  margin: 16px;
+}
+
+.rulings .ruling-date{
+  color: rgba(0, 0, 0, 0.54);
+}
+
+@media (max-width: 860px) {
+  .legalities-container {
+      grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .legalities-container  {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
