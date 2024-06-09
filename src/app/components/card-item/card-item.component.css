@@ -44,11 +44,6 @@ a mat-icon:hover{
   margin-bottom: 16px;
 }
 
-/* mat-tab{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-} */
-
 .legalities-container{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -77,6 +72,12 @@ a mat-icon:hover{
 
 .rulings .ruling-date{
   color: rgba(0, 0, 0, 0.54);
+}
+
+@media (max-width: 460px) {
+  .card-image-content{
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 860px) {
